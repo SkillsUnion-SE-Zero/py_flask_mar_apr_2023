@@ -27,7 +27,7 @@ Challenge 3: More OOP practice
     - id (an integer)
     - title (a string)
     - release date (a string in the form "YYYY-MM-DD", e.g. "2023-03-16")
-    - director (a string)
+    [- director was included initially here, but don't add a director yet]
 1B. Now create two Movies.  Use any values you want.
 2A. Create a new class called Director with the following attributes:
     - id (an integer)
