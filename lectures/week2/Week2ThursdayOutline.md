@@ -28,4 +28,4 @@ Need at least 11 (recommended 12) out of 16 discussion topics to satisfy this re
 - Normalization (briefly)
 - Data types
 - Creating our first entity-relationship diagram (ERD) with a one-to-many relationship
-- Creating a many-to-many relationship
+- Creating a many-to-many relationship (ERD) - in a separate video
