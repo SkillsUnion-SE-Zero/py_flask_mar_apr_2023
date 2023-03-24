@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing values from your server</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <p>Message from server: {{ server_message }}</p>
+    <p>Favorite number: {{ num }}</p>
+    <!-- What would you type here to go through each item in the list? -->
+    <ul>
+        {% for this_company in company_list %}
+            {% if this_company["id"] % 2 == 0 %} {# Demoing an if statement - this is a Jinja comment #}
+                <li class="even">ID: {{ this_company["id"] }}; the name of the company is {{ this_company["name"] }}</li>
+            {% else %}
+                <li class="odd">ID: {{ this_company["id"] }}; the name of the company is {{ this_company["name"] }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <ul>
+        <li>Hello!</li>
+    </ul>
+</body>
+</html>
