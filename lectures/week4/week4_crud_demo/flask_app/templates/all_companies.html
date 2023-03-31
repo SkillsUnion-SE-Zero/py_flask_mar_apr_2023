@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All Companies</title>
 </head>
 <body>
     <nav>
@@ -22,15 +22,21 @@
                 <th>Location</th>
                 <th>Slogan</th>
                 <th>Over $1 billion</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            {% for this_company in session["added_companies"] %}
+            {% for this_company in list_of_company_objects %}
             <tr>
-                <td>{{ this_company["name"] }}</td>
-                <td>{{ this_company["location"] }}</td>
-                <td>{{ this_company["slogan"] }}</td>
-                <td>{{ this_company["over_one_billion"] }}</td>
+                <td>{{ this_company.name }}</td>
+                <td>{{ this_company.location }}</td>
+                <td>{{ this_company.slogan }}</td>
+                {% if this_company.over_one_billion == 1 %}
+                    <td>Yes</td>
+                {% else %}
+                    <td>No</td>
+                {% endif %}
+                <td><a href="/companies/{{ this_company.id }}">View</a> <a href="/companies/{{ this_company.id }}/edit">Edit</a> <a href="/companies/{{ this_company.id }}/delete">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>

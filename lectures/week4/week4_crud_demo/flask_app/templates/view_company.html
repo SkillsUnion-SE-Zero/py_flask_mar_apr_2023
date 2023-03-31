@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Company</title>
+</head>
+<body>
+    <nav>
+        <a href="#">The Electric Companies!</a>
+        <ul>
+            <li><a href="/companies">All companies</a></li>
+            <li><a href="/logout">Log out</a></li>
+        </ul>
+    </nav>
+    {% if this_company == None %} {# Added after the live lecture - showing custom info if no company found #}
+        <p>There's no company that exists here.</p>
+    {% else %}
+        <h1>About Company #{{ this_company.id }}: {{ this_company.name }}</h1>
+        <p>Location: {{ this_company.location }}</p>
+        <p>Slogan: {{ this_company.slogan }}</p>
+        <p>Over $1 billion in revenue: {% if this_company.over_one_billion == 1 %} Yes {% else %} No {% endif %}</p>
+        <p><a href="/companies/{{ this_company.id }}/edit">Edit</a> <a href="/companies/{{ this_company.id }}/delete">Delete</a></p>
+    {% endif %}
+</body>
+</html>

@@ -29,7 +29,6 @@ Need at least 11 (recommended 12) out of 16 discussion topics to satisfy this re
 - Saving a new company to the database (CREATE) - remove session
 - Showing all companies from the database (READ all) - remove session
 - Showing one company from the database in our app (READ one) - initially without any electronics
-- Editing one company with a form and talking to the database (UPDATE)
-- Deleting one company from the database through our app (DELETE)
-- If we have time:
-    - Overview of modularization and why we do it
+- Didn't get to in lecture today, so we'll cover these Tuesday:
+    - Editing one company with a form and talking to the database (UPDATE)
+    - Deleting one company from the database through our app (DELETE)

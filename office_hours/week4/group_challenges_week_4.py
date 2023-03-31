@@ -25,7 +25,8 @@ We will create a controller and import it in our server file soon.  Same with ad
 """
 Part 2: Adding some routes and HTML
 For this exercise, you may use any route names you wish.
-1. Create a new file in your controllers folder called "favorites.py".
+1. Create a new file in your controllers folder called "favorites.py".  Make sure you import app
+and any functions you need from Flask.  Make sure you import this controller in your server.py file!
 2. Create the following:
     - An HTML file with a form where a user can enter a favorite food, favorite color and favorite band/artist.
       Feel free to add additional fields - especially other input types!  The solutions won't show this to encourage
