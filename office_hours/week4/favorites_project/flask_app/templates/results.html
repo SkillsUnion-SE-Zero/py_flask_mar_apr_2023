@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results from form</title>
+</head>
+<body>
+    <h1>Here is your new form data:</h1>
+    <p>Favorite food: {{ session["favorite_food"] }}</p>
+    <p>Favorite color: {{ session["favorite_color"] }}</p>
+    <p>Favorite band: {{ session["favorite_band"] }}</p>
+    {# Only show old values if we filled out form, otherwise display message saying this is the first time. #}
+    {% if "old_favorite_food" not in session or "old_favorite_color" not in session or "old_favorite_band" not in session %}
+        <p>This is the first time a form was submitted.</p>
+    {% else %}
+        <p>Here is your old form data:</p>
+        <p>Favorite food: {{ session["old_favorite_food"] }}</p>
+        <p>Favorite color: {{ session["old_favorite_color"] }}</p>
+        <p>Favorite band: {{ session["old_favorite_band"] }}</p>
+    {% endif %}
+</body>
+</html>
