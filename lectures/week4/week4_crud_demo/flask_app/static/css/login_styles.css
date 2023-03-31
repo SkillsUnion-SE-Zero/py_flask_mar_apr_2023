@@ -1,0 +1,32 @@
+* { 
+    margin: 0; /* CSS reset */
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+.center-text {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.pt14 {
+    font-size: 14pt;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+
+
+.btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: skyblue;
+    color: black;
+    padding: 10px;
+    font-size: 12pt;
+}

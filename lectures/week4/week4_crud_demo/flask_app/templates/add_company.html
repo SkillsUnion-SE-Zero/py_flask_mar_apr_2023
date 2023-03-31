@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all_company_styles.css') }}">
     <title>Add a Company</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
         </ul>
     </nav>
     <h1>Add a Company</h1>
-    <form action="/companies/add" method="POST">
+    <form action="/companies/add" method="POST" class="form">
         <div>
             <label>Name:</label>
             <input type="text" name="name">
@@ -37,7 +38,7 @@
                 <label for="over_one_billion_no">No</label>
             </div>
         </div>
-        <input type="submit" value="Add company">
+        <p><input type="submit" value="Add company" class="btn"></p>
     </form>
 </body>
 </html>
