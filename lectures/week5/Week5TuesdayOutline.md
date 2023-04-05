@@ -30,11 +30,11 @@ Need at least 11 (recommended 12) out of 16 discussion topics to satisfy this re
 - Editing one company with a form and talking to the database (UPDATE)
 - Deleting one company from the database through our app (DELETE)
 - Look at new wireframe with new pages
-- Adding a new electronic to the database - with a company linked (CREATE)
-- If we have time:
+- Saved for tomorrow and Thursday:
+    - Adding a new electronic to the database - with a company linked (CREATE)
     - Showing all electronics with the companies linked (READ all)
-- Likely for tomorrow:
     - Showing one electronic with the company linked (READ one)
     - Revisit showing one company - now linking companies (READ one)
     - Editing one electronic (UPDATE)
     - Deleting one electronic (DELETE)
+    - Adding validations to our forms

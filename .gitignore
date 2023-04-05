@@ -3,6 +3,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,linux,visualstudiocode,python,flask
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,linux,visualstudiocode,python,flask
 
+# Pipfile now included thanks to Thomas' suggestion
+
 ### Added myself ###
 *.bak
 /not_for_github
@@ -12,7 +14,6 @@ instance/*
 !instance/.gitignore
 .webassets-cache
 .env
-Pipfile
 Pipfile.lock
 
 ### Flask.Python Stack ###

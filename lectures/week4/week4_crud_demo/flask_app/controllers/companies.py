@@ -72,18 +72,41 @@ def edit_one_company_page(id):
     if "name" not in session:
         print("Not logged in - going back to root route")
         return redirect("/")
-    pass
+    # Need data dictionary as we need the ID of the company
+    data = {
+        "id": id
+    }
+    # Grab the company
+    this_company = company.Company.get_one_company(data)
+    return render_template("edit_company.html", this_company = this_company)
 
 @app.route("/companies/<int:id>/delete") # Delete company from DB
 def delete_one_company(id):
     if "name" not in session:
         print("Not logged in - going back to root route")
         return redirect("/")
-    pass
+    # Need data dictionary as we need the ID of the company
+    data = {
+        "id": id
+    }
+    company.Company.delete_company(data) # Delete company from DB
+    return redirect("/companies") # Send back to all companies
 
 @app.route("/companies/<int:id>/update", methods=["POST"]) # Take form data and edit company in DB
 def update_company_in_db(id):
     if "name" not in session:
         print("Not logged in - going back to root route")
         return redirect("/")
-    pass
+    # Put data from form into this new dictionary (will be more useful
+    # in update and view queries)
+    form_results = {
+        "name": request.form["name"],
+        "slogan": request.form["slogan"],
+        "location": request.form["location"],
+        "over_one_billion": request.form["over_one_billion"],
+        "id": id, # IMPORTANT: So we know which company to edit in the database
+    }
+    # NEW: We're now calling on a class method to update the company
+    # in the database - importing the file, so file_name.ClassName.method_name()
+    company.Company.update_company(form_results)
+    return redirect(f"/companies/{id}") # alternately "/companies/" + str(id)
