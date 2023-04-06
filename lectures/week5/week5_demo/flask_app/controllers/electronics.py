@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, session
 from flask_app import app
-# Import models
+from flask_app.models import electronic, company # Import models
 
 # Route to display new electronic form
 @app.route("/electronics/new")
@@ -9,15 +9,17 @@ def new_electronic_form():
     if "name" not in session:
         print("Not logged in - going back to root route")
         return redirect("/")
-    pass
+    all_companies = company.Company.get_all_companies()
+    return render_template("add_electronic.html", all_companies = all_companies)
 
 # View all electronics
 @app.route("/electronics")
-def all_electronics_age():
+def all_electronics_page():
     if "name" not in session:
         print("Not logged in - going back to root route")
         return redirect("/")
-    pass
+    all_electronics = electronic.Electronic.get_all_electronics_with_companies()
+    return render_template("all_electronics.html", all_electronics = all_electronics)
 
 # View one electronic
 @app.route("/electronics/<int:id>")
@@ -41,7 +43,9 @@ def add_electronic_to_db():
     if "name" not in session:
         print("Not logged in - going back to root route")
         return redirect("/")
-    pass
+    # Let's use request.form to directly pass in the data as a dictionary (be careful if you use inputs like checkboxes and radio buttons)
+    new_id = electronic.Electronic.add_one_electronic(request.form)
+    return redirect(f"/electronics/{new_id}") # Redirect to new electronic's page
 
 # Route to delete an electronic from the database
 @app.route("/electronics/<int:id>/delete")

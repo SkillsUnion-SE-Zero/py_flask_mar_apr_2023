@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all_company_styles.css') }}">
+    <title>Edit a Company</title>
+</head>
+<body>
+    <nav>
+        <a href="#">The Electric Companies!</a>
+        <ul>
+            <li><a href="/companies">All companies</a></li>
+            <li><a href="/electronics">All electronics</a></li>
+            <li><a href="/logout">Log out</a></li>
+        </ul>
+    </nav>
+    <h1>Edit a Company</h1>
+    <form action="/companies/{{ this_company.id }}/update" method="POST" class="form">
+        <div>
+            <label>Name:</label>
+            {# REMEMBER TO INCLUDE A "value" ATTRIBUTE WITH input TAGS!  (For textarea tags it is a bit different.) #}
+            <input type="text" name="name" value="{{ this_company.name }}" placeholder="Enter a name">
+        </div>
+        <div>
+            <label>Slogan:</label>
+            <input type="text" name="slogan" value="{{ this_company.slogan }}">
+        </div>
+        <div>
+            <label>Location:</label>
+            <input type="text" name="location" value="{{ this_company.location }}">
+        </div>
+        <div>
+            <p>Over one billion:</p>
+            <div>
+                {% if this_company.over_one_billion == 1 %}
+                <input type="radio" name="over_one_billion" id="over_one_billion_yes" value="1" checked> <!-- Need an integer for a boolean field (1 = yes, 0 = no)-->
+                {% else %}
+                <input type="radio" name="over_one_billion" id="over_one_billion_yes" value="1"> <!-- Need an integer for a boolean field (1 = yes, 0 = no)-->
+                {% endif %}
+                <label for="over_one_billion_yes">Yes</label>
+                {% if this_company.over_one_billion == 0 %}
+                <input type="radio" name="over_one_billion" id="over_one_billion_no" value="0" checked>
+                {% else %}
+                <input type="radio" name="over_one_billion" id="over_one_billion_no" value="0">
+                {% endif %}
+                <label for="over_one_billion_no">No</label>
+            </div>
+        </div>
+        <p><input type="submit" value="Edit company" class="btn"></p>
+    </form>
+</body>
+</html>

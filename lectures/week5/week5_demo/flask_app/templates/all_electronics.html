@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all_company_styles.css') }}"> <!-- Added after lecture: adding styles -->
+    <title>All Electronics</title>
+</head>
+<body>
+    <nav>
+        <a href="#">The Electric Companies!</a>
+        <ul>
+            <li><a href="/companies">All companies</a></li>
+            <li><a href="/electronics/new">Add electronic</a></li>
+            <li><a href="/logout">Log out</a></li>
+        </ul>
+    </nav>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Release date</th>
+                <th>Company</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for this_electronic in all_electronics %}
+            <tr>
+                <td>{{ this_electronic.id }}</td>
+                <td>{{ this_electronic.name }}</td>
+                <td>{{ this_electronic.type }}</td>
+                <td>{{ this_electronic.release_date }}</td>
+                <td>{{ this_electronic.company.name }}</td>
+                <td><a href="/electronics/{{ this_electronic.id }}">View</a> <a href="/electronics/{{ this_electronic.id }}/edit">Edit</a> <a href="//electronics/{{ this_electronic.id }}/delete">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Added after lecture -->
+    <p><a href="/electronics/new" class="btn">Add electronic</a></p>
+</body>
+</html>

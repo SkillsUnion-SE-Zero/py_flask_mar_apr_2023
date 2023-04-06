@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    margin: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: mediumaquamarine;
+}
+
+nav a {
+    text-decoration: none;
+    flex: 2;
+    color: lightyellow;
+    margin: 10px;
+}
+
+nav > a {
+    font-size: 20pt;
+    font-weight: bold;
+}
+nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+h1, p {
+    margin: 10px;
+}
+
+.btn-edit {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: lightyellow;
+    color: black;
+    padding: 10px;
+    font-size: 12pt;
+    text-decoration: none;
+}
+
+.btn-delete {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: lightsalmon;
+    color: black;
+    padding: 10px;
+    font-size: 12pt;
+    text-decoration: none;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login_styles.css') }}">
+    <title>Welcome to the Electric Companies!</title>
+</head>
+<body>
+    <h1 class="center-text">Welcome to the Electric Companies!</h1>
+    <p class="center-text pt14">Enter your name to add a company:</p>
+    <form action="/login" method="POST" class="form"> <!-- Need the action (route) and method="POST"!! -->
+        <div>
+            <label>Your name:</label>
+            <input type="text" name="your_name"> <!-- Remember the name attribute for your inputs-->
+            <!-- Don't forget a way to send the form! -->
+            <p class="center-text"><input type="submit" value="Enter" class="btn"></p>
+        </div>
+    </form>
+</body>
+</html>

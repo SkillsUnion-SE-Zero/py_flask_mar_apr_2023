@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all_company_styles.css') }}">
+    <title>All Companies</title>
+</head>
+<body>
+    <nav>
+        <a href="#">The Electric Companies!</a>
+        <ul>
+            <li><a href="/companies/new">Add company</a></li>
+            <li><a href="/electronics">All electronics</a></li>
+            <li><a href="/logout">Log out</a></li>
+        </ul>
+    </nav>
+    <h1>All companies page</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Slogan</th>
+                <th>Over $1 billion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for this_company in list_of_company_objects %}
+            <tr>
+                <td>{{ this_company.name }}</td>
+                <td>{{ this_company.location }}</td>
+                <td>{{ this_company.slogan }}</td>
+                {% if this_company.over_one_billion == 1 %}
+                    <td>Yes</td>
+                {% else %}
+                    <td>No</td>
+                {% endif %}
+                <td><a href="/companies/{{ this_company.id }}">View</a> <a href="/companies/{{ this_company.id }}/edit">Edit</a> <a href="/companies/{{ this_company.id }}/delete">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><a href="/companies/new" class="btn">Add company</a></p>
+</body>
+</html>
