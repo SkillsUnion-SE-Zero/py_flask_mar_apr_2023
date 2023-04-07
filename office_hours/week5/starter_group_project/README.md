@@ -14,13 +14,13 @@ Take a look at your schema so you can see what columns and tables you have.  Onc
 2. In the "add_athlete.html", there are some pieces missing in your form.  Fill in the missing pieces.
 3. In your models folder, you should see a file called "athlete.py".  Add the schema name as needed.
 4. Write a class method that will allow you to add an athlete to your database.  Make sure you have the query correct!  Do you need to pass in a 'data' parameter?
-5. In your "athletes.py" controller, add some code that will take your form and call on the class method to add the athlete to the database.  Don't forget to redirect!
-6. Go to MySQL Workbench and double-check to make sure your athlete was added to the database.  If not, it's time to do some debugging!
+5. In your "athletes.py" controller, add some code that will take your form and call on the class method to add the athlete to the database.  Don't forget to redirect to the route that shows all athletes!  Make sure you import your model (file)!
+6. Go ahead and add an athlete through your form to test this out.  Now go to MySQL Workbench and double-check to make sure your athlete was added to the database.  If not, it's time to do some debugging!
 
 ## Grabbing all athletes from the database
 Let's create a new class method that will grab all the athletes from your database.
 
-1. Write the query that will grab all the athletes.  Make sure you store your rows of data you get back as a list of dictionaries into a new variables (you'll usually see this as "results", but you can use another name if you wish).
+1. Write the query that will grab all the athletes.  Make sure you store your rows of data you get back as a list of dictionaries into a new variable (you'll usually see this as "results", but you can use another name if you wish).
 2. Create a new list that will hold a bunch of Athlete objects.
 3. Write a loop that will go through each dictionary:
     - In your loop, create a new Athlete object - how would you do that?
