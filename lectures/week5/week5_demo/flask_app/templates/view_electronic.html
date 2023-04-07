@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Electronic</title>
+</head>
+<body>
+    <nav>
+        <a href="#">The Electric Companies!</a>
+        <ul>
+            <li><a href="/companies">All companies</a></li>
+            <li><a href="/electronics">All electronics</a></li>
+            <li><a href="/logout">Log out</a></li>
+        </ul>
+    </nav>
+    {% if this_electronic == None %}
+        <h1>There is no electronic item with this ID.</h1>
+    {% else %}
+        <h1>About {{ this_electronic.name }}:</h1>
+        <p>Company: {{ this_electronic.company.name }}</p>
+        <p>Size: {{ this_electronic.size }}</p>
+        <p>Type: {{ this_electronic.type }}</p>
+        <p>Release date: {{ this_electronic.release_date }}</p>
+        <p><a href="/electronics/{{ this_electronic.id }}/edit">Edit</a> <a href="/electronics/{{ this_electronic.id }}/delete">Delete</a></p>
+    {% endif %}
+</body>
+</html>

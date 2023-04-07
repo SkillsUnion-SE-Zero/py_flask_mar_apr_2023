@@ -63,8 +63,8 @@ def view_one_company(id):
     data = {
         "id": id
     }
-    # Grab the company
-    this_company = company.Company.get_one_company(data)
+    # Grab the company - NOW with electronics linked
+    this_company = company.Company.get_one_company_with_electronics(data)
     return render_template("view_company.html", this_company = this_company)
 
 @app.route("/companies/<int:id>/edit") # Showing the edit page - NOT for editing in DB

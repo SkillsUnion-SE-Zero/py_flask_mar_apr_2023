@@ -1,4 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app.models import electronic # Import the other model
 
 class Company:
     db_name = "company_electronic_schema" # NEW: Class variable to save schema name in one spot
@@ -48,6 +49,37 @@ class Company:
             # NOTE: The variable "results" is a LIST, but we must pass in a DICTIONARY, so we
             # need a specific dictionary - in this case, at index 0
             new_company_object = cls(results[0]) # cls() means create an Object inside this class - in this case, Company()
+            # Return this one object
+            return new_company_object
+        
+    @classmethod
+    def get_one_company_with_electronics(cls, data):
+        query = """
+        SELECT * FROM companies
+        LEFT JOIN electronics
+        ON companies.id = electronics.company_id
+        WHERE companies.id = %(id)s;
+        """
+        results = connectToMySQL(cls.db_name).query_db(query, data)
+        if len(results) == 0: # Nothing in DB
+            return None # Return an empty list - nothing to get
+        else: # At least one company found
+            # Create the Company object
+            new_company_object = cls(results[0]) # cls() means create an Object inside this class - in this case, Company()
+            # Link the Electronics to this Company - one at a time
+            for each_electronic_dictionary in results:
+                print(each_electronic_dictionary)
+                new_electronic_dictionary = {
+                    "id": each_electronic_dictionary["electronics.id"],
+                    "name": each_electronic_dictionary["electronics.name"],
+                    "size": each_electronic_dictionary["size"],
+                    "type": each_electronic_dictionary["type"],
+                    "release_date": each_electronic_dictionary["release_date"],
+                    "created_at": each_electronic_dictionary["electronics.created_at"],
+                    "updated_at": each_electronic_dictionary["electronics.updated_at"],
+                }
+                new_electronic_object = electronic.Electronic(new_electronic_dictionary)
+                new_company_object.electronics.append(new_electronic_dictionary)
             # Return this one object
             return new_company_object
         

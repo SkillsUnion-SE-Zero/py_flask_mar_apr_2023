@@ -24,7 +24,6 @@ Need at least 11 (recommended 12) out of 16 discussion topics to satisfy this re
 
 ## Outline for today:
 - Showing one electronic with the company linked (READ one)
-- Revisit showing one company - now linking companies (READ one)
+- Revisit showing one company - now linking electronics (READ one)
 - Editing one electronic (UPDATE)
 - Deleting one electronic (DELETE)
-- Adding validations to our forms (if there's time)
