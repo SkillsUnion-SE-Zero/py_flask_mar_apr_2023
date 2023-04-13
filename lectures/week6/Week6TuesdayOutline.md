@@ -25,7 +25,7 @@ For those of you behind: if you submit the Users CRUD Modularized assignment BEF
 
 Need at least 11 (recommended 12) out of 16 discussion topics to satisfy this requirement!
 
-## Outline for today (possibly into Wednesday):
+## Outline for today:
 - Why login and registration?  Plus talk about security
 - Wireframe - identify routes and tables for project
 - Build user schema (and forward engineer) and model
@@ -34,7 +34,7 @@ Need at least 11 (recommended 12) out of 16 discussion topics to satisfy this re
 - Validations - and overview
 - Adding and testing registration - with validations (validations done Tuesday, will actually register Wednesday)
 
-- Will do in Wednesday's lecture as we didn't have time:
+- Done in Wednesday's lecture as we didn't have time:
     - Finishing registration (with Bcrypt)
     - Adding logout
     - Adding logic to ensure only logged in users can access pages

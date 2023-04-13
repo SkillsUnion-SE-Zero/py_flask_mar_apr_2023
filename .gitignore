@@ -8,6 +8,7 @@
 ### Added myself ###
 *.bak
 /not_for_github
+/office_hours/week6/carrier_project
 
 ### Flask ###
 instance/*
