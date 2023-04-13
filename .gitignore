@@ -8,7 +8,7 @@
 ### Added myself ###
 *.bak
 /not_for_github
-/office_hours/week6/carrier_project
+/office_hours/week6/group_project_solution
 
 ### Flask ###
 instance/*
