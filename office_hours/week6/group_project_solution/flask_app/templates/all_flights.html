@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All flights</title>
+</head>
+<body>
+    <h1>All flights</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Flight number</th>
+                <th>Starting city</th>
+                <th>Ending city</th>
+                <th>Carrier</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for this_flight in all_flights %}
+            <tr>
+                <td>{{ this_flight.id }}</td>
+                <td>{{ this_flight.number }}</td>
+                <td>{{ this_flight.starting_city }}</td>
+                <td>{{ this_flight.ending_city }}</td>
+                <td>{{ this_flight.carrier.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

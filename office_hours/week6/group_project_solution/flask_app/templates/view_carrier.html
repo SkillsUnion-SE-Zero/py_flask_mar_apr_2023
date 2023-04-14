@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View carrier</title>
+</head>
+<body>
+    <h1>About carrier #{{ this_carrier.id }}: {{ this_carrier.name }}</h1>
+    <p>Headquarters city: {{ this_carrier.hq_city }}</p>
+    <p>Year founded: {{ this_carrier.year_founded }}</p>
+    <p>Total workers: {{ this_carrier.total_workers }}</p>
+    <ul>
+        <!-- Showing flights -->
+        {% for this_flight in this_carrier.flights %}
+            <li>Flight {{ this_flight.number }}: {{ this_flight.starting_city }} to {{ this_flight.ending_city }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
