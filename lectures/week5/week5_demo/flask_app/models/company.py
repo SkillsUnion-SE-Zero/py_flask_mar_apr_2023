@@ -79,7 +79,7 @@ class Company:
                     "updated_at": each_electronic_dictionary["electronics.updated_at"],
                 }
                 new_electronic_object = electronic.Electronic(new_electronic_dictionary)
-                new_company_object.electronics.append(new_electronic_dictionary)
+                new_company_object.electronics.append(new_electronic_object) # CORRECTION: new_electronic_object, NOT new_electronic_dictionary inside the parentheses
             # Return this one object
             return new_company_object
         

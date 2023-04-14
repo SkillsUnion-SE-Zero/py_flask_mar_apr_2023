@@ -36,8 +36,9 @@ Need at least 11 (recommended 12) out of 16 discussion topics to satisfy this re
     - Showing all companies - with name of user who added included, plus conditional rendering of links
     - Showing one company - with name of user who added included, plus conditional rendering of links
 - Logic for ensuring only the creator can access routes that involve editing or deleting
-- Linking Users and Electronics when...:
-    - Creating an electronic
-    - Showing all electronics - with name of user who added included, plus conditional rendering of links
-    - Showing one electronic item - with name of user who added included, plus conditional rendering of links
-- If we have time today: Showing a user's companies and electronics
+- Will do in a bonus video:
+    - Linking Users and Electronics when...:
+        - Creating an electronic
+        - Showing all electronics - with name of user who added included, plus conditional rendering of links
+        - Showing one electronic item - with name of user who added included, plus conditional rendering of links
+- (Didn't get to, but will do something similar in belt review: If we have time today: Showing a user's companies and electronics)
