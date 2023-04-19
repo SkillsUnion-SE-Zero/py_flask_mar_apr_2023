@@ -19,10 +19,10 @@ class Sailor:
         self.updated_at = data["updated_at"]
 
 sailor_results = [
-    {"id": 1, "first_name": "Adrian", "last_name": "Barnard", "created_at": "???", "updated_at": "???"},
-    {"id": 3, "first_name": "Jenny", "last_name": "Rocket", "created_at": "???", "updated_at": "???"},
-    {"id": 4, "first_name": "John", "last_name": "Doe", "created_at": "???", "updated_at": "???"},
-    {"id": 5, "first_name": "Penny", "last_name": "Lane", "created_at": "???", "updated_at": "???"},
+    {"id": 1, "first_name": "Adrian", "last_name": "Barnard", "created_at": "???", "updated_at": "???", "ship_id": 3},
+    {"id": 3, "first_name": "Jenny", "last_name": "Rocket", "created_at": "???", "updated_at": "???", "ship_id": 3},
+    {"id": 4, "first_name": "John", "last_name": "Doe", "created_at": "???", "updated_at": "???", "ship_id": 2},
+    {"id": 5, "first_name": "Penny", "last_name": "Lane", "created_at": "???", "updated_at": "???", "ship_id": 2},
 ]
 
 ship_results = [
