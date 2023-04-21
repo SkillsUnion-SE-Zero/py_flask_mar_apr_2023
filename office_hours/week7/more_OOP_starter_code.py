@@ -8,6 +8,7 @@ class Ship:
         self.name = data["name"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
+        # We'll add an attribute for Sailors here
 
 
 class Sailor:
@@ -17,6 +18,9 @@ class Sailor:
         self.last_name = data["last_name"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
+        # We'll link a Ship here
+
+# Hard-coded values that represent data from your database
 
 sailor_results = [
     {"id": 1, "first_name": "Adrian", "last_name": "Barnard", "created_at": "???", "updated_at": "???", "ship_id": 3},
