@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search NASA API pictures</title>
+</head>
+<body>
+    <h1>Search images</h1>
+    <h2>Search for one image:</h2>
+    <form action="/search" method="POST">
+        <div>
+            <label>Date:</label>
+            <input type="date" name="date">
+        </div>
+        <input type="submit" value="Search">
+    </form>
+    <p>Search multiple images by start and end dates:</p>
+    <form action="/search/multiple" method="POST">
+        <div>
+            <label>Starting date:</label>
+            <input type="date" name="starting_date">
+        </div>
+        <div>
+            <label>Ending date:</label>
+            <input type="date" name="ending_date">
+        </div>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
